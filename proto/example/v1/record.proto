@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package example.v1;
+
+import "crude/crude.proto";
+
+service MyRecordService {
+  // Observe events for all RPCs in this service.
+  option (crude.service.enable) = true;
+
+  rpc ReadRecord(ReadRecordRequest) returns (ReadRecordResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+    // Explicitly disable events from this RPC.
+    option (crude.rpc.enable) = false;
+  }
+
+  rpc UpdateRecord(UpdateRecordRequest) returns (UpdateRecordResponse) {}
+}
+
+service UnobservedService {
+  rpc Ping(PingRequest) returns (PingResponse) {
+    option idempotency_level = NO_SIDE_EFFECTS;
+  }
+
+  rpc ObservedAction(ObservedActionRequest) returns (ObservedActionResponse) {
+    // Explicitly enable events for this single RPC on an otherwise disabled service.
+    option (crude.rpc.enable) = true;
+  }
+}
+
+message ReadRecordRequest {
+  string id = 1;
+}
+
+message ReadRecordResponse {
+  string id = 1;
+  string value = 2;
+}
+
+message Metadata {
+  string label = 1;
+  string api_key = 2 [(crude.field.redact) = true];
+}
+
+message UpdateRecordRequest {
+  string id = 1;
+  string password = 2 [(crude.field.redact) = true];
+  string value = 3;
+  Metadata metadata = 4;
+  repeated Metadata history = 5;
+  map<string, Metadata> tags = 6;
+}
+
+message UpdateRecordResponse {
+  string id = 1;
+  string value = 2;
+  string secret_token = 3 [(crude.field.redact) = true];
+}
+
+message PingRequest {}
+
+message PingResponse {}
+
+message ObservedActionRequest {
+  string name = 1;
+}
+
+message ObservedActionResponse {
+  bool ok = 1;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package crude;
+
+import "google/protobuf/descriptor.proto";
+
+message service {
+  extend google.protobuf.ServiceOptions {
+    bool enable = 50000;
+  }
+}
+
+message rpc {
+  extend google.protobuf.MethodOptions {
+    bool enable = 50000;
+  }
+}
+
+message field {
+  extend google.protobuf.FieldOptions {
+    bool redact = 50000;
+  }
+}

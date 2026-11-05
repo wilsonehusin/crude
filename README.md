@@ -17,6 +17,24 @@ service MyRecord {
 
 message UpdateRecordRequest {
   string id = 1;
-  string password = 2 [(crude.field.redact = true)];
+  string password = 2 [(crude.field.redact) = true];
 }
+```
+
+## Usage (`connectrpc.com/connect/v2`)
+
+```go
+interceptor := &crude.Interceptor{
+	OnEvent: func(ctx context.Context, event crude.Event) error {
+		slog.InfoContext(ctx, "rpc observed",
+			slog.String("procedure", event.Procedure),
+			slog.Any("request", event.Request),
+			slog.Any("response", event.Response),
+			slog.Any("err", event.Err),
+		)
+		return nil
+	},
+}
+
+server := connect.NewServer(interceptor.ServerInterceptor)
 ```
