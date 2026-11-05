@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: crude/crude.proto
 
-package crude
+package crudepb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -185,9 +185,9 @@ const file_crude_crude_proto_rawDesc = "" +
 	"\x03rpc28\n" +
 	"\x06enable\x12\x1e.google.protobuf.MethodOptions\x18І\x03 \x01(\bR\x06enable\"@\n" +
 	"\x05field27\n" +
-	"\x06redact\x12\x1d.google.protobuf.FieldOptions\x18І\x03 \x01(\bR\x06redactBu\n" +
+	"\x06redact\x12\x1d.google.protobuf.FieldOptions\x18І\x03 \x01(\bR\x06redactBj\n" +
 	"\tcom.crudeB\n" +
-	"CrudeProtoP\x01Z(go.husin.dev/crude/internal/gen/go/crude\xa2\x02\x03CXX\xaa\x02\x05Crude\xca\x02\x05Crude\xe2\x02\x11Crude\\GPBMetadata\xea\x02\x05Crudeb\x06proto3"
+	"CrudeProtoP\x01Z\x1dgo.husin.dev/crude/pb/crudepb\xa2\x02\x03CXX\xaa\x02\x05Crude\xca\x02\x05Crude\xe2\x02\x11Crude\\GPBMetadata\xea\x02\x05Crudeb\x06proto3"
 
 var (
 	file_crude_crude_proto_rawDescOnce sync.Once

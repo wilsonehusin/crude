@@ -4,6 +4,8 @@ package crude;
 
 import "google/protobuf/descriptor.proto";
 
+option go_package = "go.husin.dev/crude/pb/crudepb";
+
 message service {
   extend google.protobuf.ServiceOptions {
     bool enable = 50000;

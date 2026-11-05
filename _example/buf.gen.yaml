@@ -1,0 +1,19 @@
+version: v2
+inputs:
+  - directory: proto
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: go.husin.dev/crude/_example/gen/go
+      path: example
+plugins:
+  - local: ["go", "tool", "protoc-gen-go"]
+    out: gen/go
+    opt:
+      - paths=source_relative
+  - local: ["go", "tool", "protoc-gen-connect-go"]
+    out: gen/go
+    opt:
+      - paths=source_relative
+

@@ -7,7 +7,7 @@ import (
 	"sync"
 
 	"connectrpc.com/connect/v2"
-	crudepb "go.husin.dev/crude/internal/gen/go/crude"
+	"go.husin.dev/crude/pb/crudepb"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
 )

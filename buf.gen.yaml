@@ -2,14 +2,10 @@ version: v2
 managed:
   enabled: true
   override:
-    - file_option: go_package_prefix
-      value: go.husin.dev/crude/internal/gen/go
+    - file_option: go_package
+      value: go.husin.dev/crude/pb/crudepb
 plugins:
   - local: ["go", "tool", "protoc-gen-go"]
-    out: internal/gen/go
+    out: pb/crudepb
     opt:
-      - paths=source_relative
-  - local: ["go", "tool", "protoc-gen-connect-go"]
-    out: internal/gen/go
-    opt:
-      - paths=source_relative
+      - module=go.husin.dev/crude/pb/crudepb

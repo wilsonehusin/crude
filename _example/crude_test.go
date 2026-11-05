@@ -1,4 +1,4 @@
-package crude_test
+package example_test
 
 import (
 	"bytes"
@@ -14,8 +14,8 @@ import (
 	"connectrpc.com/connect/v2/connecthttp"
 	"connectrpc.com/connect/v2/connectinprocess"
 	"go.husin.dev/crude"
-	examplev1 "go.husin.dev/crude/gen/go/example/v1"
-	"go.husin.dev/crude/gen/go/example/v1/examplev1connect"
+	examplev1 "go.husin.dev/crude/_example/gen/go/example/v1"
+	"go.husin.dev/crude/_example/gen/go/example/v1/examplev1connect"
 )
 
 type recordHandler struct {

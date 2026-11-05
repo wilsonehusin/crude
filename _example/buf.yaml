@@ -1,0 +1,14 @@
+version: v2
+modules:
+  - path: proto
+  - path: crudepb
+    lint:
+      ignore:
+        - crudepb
+lint:
+  use:
+    - STANDARD
+breaking:
+  use:
+    - FILE
+

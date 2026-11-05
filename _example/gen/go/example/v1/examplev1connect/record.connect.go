@@ -7,7 +7,7 @@ package examplev1connect
 import (
 	connect "connectrpc.com/connect/v2"
 	context "context"
-	v1 "go.husin.dev/crude/internal/gen/go/example/v1"
+	v1 "go.husin.dev/crude/_example/gen/go/example/v1"
 	sync "sync"
 )
 

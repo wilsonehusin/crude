@@ -7,7 +7,7 @@
 package examplev1
 
 import (
-	_ "go.husin.dev/crude/internal/gen/go/crude"
+	_ "go.husin.dev/crude/pb/crudepb"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -515,7 +515,7 @@ const file_example_v1_record_proto_rawDesc = "" +
 	"\x11UnobservedService\x12>\n" +
 	"\x04Ping\x12\x17.example.v1.PingRequest\x1a\x18.example.v1.PingResponse\"\x03\x90\x02\x01\x12]\n" +
 	"\x0eObservedAction\x12!.example.v1.ObservedActionRequest\x1a\".example.v1.ObservedActionResponse\"\x04\x80\xb5\x18\x01B\x9f\x01\n" +
-	"\x0ecom.example.v1B\vRecordProtoP\x01Z7go.husin.dev/crude/internal/gen/go/example/v1;examplev1\xa2\x02\x03EXX\xaa\x02\n" +
+	"\x0ecom.example.v1B\vRecordProtoP\x01Z7go.husin.dev/crude/_example/gen/go/example/v1;examplev1\xa2\x02\x03EXX\xaa\x02\n" +
 	"Example.V1\xca\x02\n" +
 	"Example\\V1\xe2\x02\x16Example\\V1\\GPBMetadata\xea\x02\vExample::V1b\x06proto3"
 
